@@ -232,3 +232,39 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .fd-page {
+    padding: 20px 16px 48px;
+  }
+
+  .fd-info-card {
+    padding: 24px 16px;
+  }
+
+  .fd-avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  .fd-name {
+    font-size: 20px;
+  }
+
+  .fd-stat-value {
+    font-size: 22px;
+  }
+
+  .fd-card {
+    padding: 18px 16px;
+  }
+
+  .fd-checkin-btns {
+    flex-direction: column;
+  }
+
+  .fd-checkin-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

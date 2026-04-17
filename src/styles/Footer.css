@@ -91,3 +91,22 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 40px 16px 28px;
+  }
+
+  .footer-inner {
+    gap: 24px;
+  }
+
+  .footer-top p {
+    font-size: 14px;
+  }
+
+  .footer-links {
+    gap: 12px;
+    font-size: 13px;
+  }
+}

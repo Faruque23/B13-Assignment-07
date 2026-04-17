@@ -119,6 +119,32 @@
   color: #9b1c1c;
 }
 
+@media (max-width: 480px) {
+  .friend-list-section {
+    padding: 28px 16px;
+  }
+
+  .friend-list-header h2 {
+    font-size: 22px;
+  }
+
+  .friend-card {
+    min-height: auto;
+    padding: 20px 14px;
+    gap: 0;
+  }
+
+  .friend-card-avatar-wrap {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 16px;
+  }
+
+  .friend-name {
+    font-size: 17px;
+  }
+}
+
 .friend-status.almost-due {
   background: #ffefcf;
   color: #8c5c04;

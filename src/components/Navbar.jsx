@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.css';
 
@@ -31,19 +32,34 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <NavLink to="/">KeenKeeper</NavLink>
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>KeenKeeper</NavLink>
         </div>
-        <ul className="nav-menu">
+
+        <button
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul className={`nav-menu ${menuOpen ? 'open' : ''}`}>
           {navItems.map(({ to, label, icon: Icon }) => (
             <li key={to} className="nav-item">
               <NavLink
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                onClick={() => setMenuOpen(false)}
               >
                 <span className="nav-icon"><Icon /></span>
                 <span className="nav-text">{label}</span>

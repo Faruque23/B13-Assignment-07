@@ -57,6 +57,3 @@ friends.json      # The friend data (lives at the project root)
 
 Right now the friend data lives in `friends.json` at the root of the project. It's loaded at runtime — there's no backend or database. Timeline entries are stored in React context, so they reset on page refresh. A future version could wire this up to localStorage or a proper API.
 
----
-
-Built as part of Batch 13, Assignment 07.

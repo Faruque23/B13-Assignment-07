@@ -29,3 +29,17 @@
   from { transform: translateX(60px); opacity: 0; }
   to   { transform: translateX(0);    opacity: 1; }
 }
+
+@media (max-width: 480px) {
+  .toast-container {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast {
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+}
