@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
+import Banner from './components/Banner'
 import './App.css'
 
 function App() {
   const [activePage, setActivePage] = useState('Home')
 
+  const handleAddFriend = () => {
+    alert('Add Friend button clicked!')
+  }
+
   return (
     <>
       <Navbar activePage={activePage} onNavClick={setActivePage} />
       <main>
-        {/* Page content will go here */}
+        {activePage === 'Home' && <Banner onAddFriend={handleAddFriend} />}
       </main>
     </>
   )
