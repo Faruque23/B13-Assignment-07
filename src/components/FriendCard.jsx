@@ -1,12 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 const FriendCard = ({ friend }) => {
+  const navigate = useNavigate();
   const statusClass = friend.status.replace(/\s+/g, '-');
   const statusText = friend.status
-    .split('-')
-    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .split(' ')
+    .map((w) => w[0].toUpperCase() + w.slice(1))
     .join(' ');
 
   return (
-    <article className="friend-card">
+    <article
+      className="friend-card"
+      onClick={() => navigate(`/friend/${friend.id}`)}
+      style={{ cursor: 'pointer' }}
+    >
       <div className="friend-card-avatar-wrap">
         <img className="friend-avatar" src={friend.picture} alt={friend.name} />
       </div>

@@ -1,0 +1,234 @@
+.fd-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.fd-back {
+  background: none;
+  border: none;
+  color: #1f513e;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.fd-back:hover { text-decoration: underline; }
+
+.fd-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* LEFT */
+.fd-info-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.fd-name {
+  margin: 0;
+  font-size: 22px;
+  color: #111827;
+}
+
+.fd-status {
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.fd-status.on-track   { background: #d4f1e4; color: #0f6d3a; }
+.fd-status.overdue    { background: #ffe3e3; color: #9b1c1c; }
+.fd-status.almost-due { background: #ffefcf; color: #8c5c04; }
+
+.fd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.fd-tag {
+  background: #f1f5f9;
+  color: #374151;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fd-bio {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fd-email {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 0;
+}
+
+.fd-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.fd-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.fd-btn:hover { opacity: 0.85; }
+.fd-btn-snooze  { background: #e0f2fe; color: #0369a1; }
+.fd-btn-archive { background: #fef9c3; color: #854d0e; }
+.fd-btn-delete  { background: #fee2e2; color: #991b1b; }
+
+/* RIGHT */
+.fd-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.fd-stat-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.fd-stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f513e;
+}
+
+.fd-stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fd-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.fd-card h3 {
+  margin: 0 0 12px;
+  font-size: 17px;
+  color: #111827;
+}
+
+.fd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.fd-card-header h3 { margin: 0; }
+
+.fd-edit-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #374151;
+}
+.fd-edit-btn:hover { background: #e2e8f0; }
+
+.fd-checkin-sub {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 16px;
+}
+
+.fd-checkin-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fd-checkin-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.fd-checkin-btn:hover { opacity: 0.85; }
+.fd-checkin-call  { background: #d4f1e4; color: #0f6d3a; }
+.fd-checkin-text  { background: #e0f2fe; color: #0369a1; }
+.fd-checkin-video { background: #ede9fe; color: #5b21b6; }
+
+.fd-not-found {
+  text-align: center;
+  padding: 80px 24px;
+}
+.fd-not-found button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #1f513e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+@media (max-width: 800px) {
+  .fd-layout {
+    grid-template-columns: 1fr;
+  }
+  .fd-stats-row {
+    grid-template-columns: 1fr;
+  }
+}

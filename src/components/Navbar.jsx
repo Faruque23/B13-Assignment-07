@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.css';
 
-// Simple icon components
 const HomeIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -25,42 +24,32 @@ const StatsIcon = () => (
   </svg>
 );
 
-const Navbar = ({ activePage = 'Home', onNavClick }) => {
-  const navItems = [
-    { id: 'home', label: 'Home', icon: HomeIcon },
-    { id: 'timeline', label: 'Timeline', icon: TimelineIcon },
-    { id: 'stats', label: 'Stats', icon: StatsIcon },
-  ];
+const navItems = [
+  { to: '/',          label: 'Home',     icon: HomeIcon     },
+  { to: '/timeline',  label: 'Timeline', icon: TimelineIcon },
+  { to: '/stats',     label: 'Stats',    icon: StatsIcon    },
+];
 
+const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
         <div className="navbar-logo">
-          <a href="#home">KeenKeeper</a>
+          <NavLink to="/">KeenKeeper</NavLink>
         </div>
-
-        {/* Navigation Links */}
         <ul className="nav-menu">
-          {navItems.map((item) => {
-            const IconComponent = item.icon;
-            const isActive = activePage.toLowerCase() === item.label.toLowerCase();
-            
-            return (
-              <li key={item.id} className="nav-item">
-                <a
-                  href={`#${item.id}`}
-                  className={`nav-link ${isActive ? 'active' : ''}`}
-                  onClick={() => onNavClick && onNavClick(item.label)}
-                >
-                  <span className="nav-icon">
-                    <IconComponent />
-                  </span>
-                  <span className="nav-text">{item.label}</span>
-                </a>
-              </li>
-            );
-          })}
+          {navItems.map(({ to, label, icon: Icon }) => (
+            <li key={to} className="nav-item">
+              <NavLink
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              >
+                <span className="nav-icon"><Icon /></span>
+                <span className="nav-text">{label}</span>
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

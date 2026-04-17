@@ -7,7 +7,11 @@ const PlusIcon = () => (
   </svg>
 );
 
-const Banner = ({ onAddFriend }) => {
+const Banner = ({ onAddFriend, friends = [] }) => {
+  const total      = friends.length;
+  const onTrack    = friends.filter((f) => f.status === 'on-track').length;
+  const needAttn   = friends.filter((f) => f.status !== 'on-track').length;
+
   return (
     <section className="banner">
       <div className="banner-content">
@@ -26,20 +30,20 @@ const Banner = ({ onAddFriend }) => {
       {/* Summary Cards */}
       <div className="summary-cards">
         <div className="summary-card">
-          <div className="card-number">10</div>
+          <div className="card-number">{total}</div>
           <div className="card-label">Total Friends</div>
         </div>
         <div className="summary-card">
-          <div className="card-number">3</div>
+          <div className="card-number">{onTrack}</div>
           <div className="card-label">On Track</div>
         </div>
         <div className="summary-card">
-          <div className="card-number">6</div>
+          <div className="card-number">{needAttn}</div>
           <div className="card-label">Need Attention</div>
         </div>
         <div className="summary-card">
-          <div className="card-number">12</div>
-          <div className="card-label">Interactions This Month</div>
+          <div className="card-number">{total}</div>
+          <div className="card-label">Total Connections</div>
         </div>
       </div>
     </section>

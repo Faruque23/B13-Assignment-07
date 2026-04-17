@@ -1,32 +1,29 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Banner from './components/Banner'
-import FriendList from './components/FriendList'
-import Footer from './components/Footer'
-import friends from '../friends.json'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import FriendDetailPage from './pages/FriendDetailPage';
+import TimelinePage from './pages/TimelinePage';
+import StatsPage from './pages/StatsPage';
+import NotFoundPage from './pages/NotFoundPage';
+import './App.css';
 
 function App() {
-  const [activePage, setActivePage] = useState('Home')
-
-  const handleAddFriend = () => {
-    alert('Add Friend button clicked!')
-  }
-
   return (
     <>
-      <Navbar activePage={activePage} onNavClick={setActivePage} />
+      <Navbar />
       <main>
-        {activePage === 'Home' && (
-          <>
-            <Banner onAddFriend={handleAddFriend} />
-            <FriendList friends={friends} />
-          </>
-        )}
+        <Routes>
+          <Route path="/"            element={<HomePage />} />
+          <Route path="/friend/:id"  element={<FriendDetailPage />} />
+          <Route path="/timeline"    element={<TimelinePage />} />
+          <Route path="/stats"       element={<StatsPage />} />
+          <Route path="*"            element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
