@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import FriendList from './components/FriendList'
+import Footer from './components/Footer'
 import friends from '../friends.json'
 import './App.css'
 
@@ -23,6 +24,7 @@ function App() {
           </>
         )}
       </main>
+      <Footer />
     </>
   )
 }
